@@ -1,0 +1,1 @@
+web: ./build/install/system/bin/system
