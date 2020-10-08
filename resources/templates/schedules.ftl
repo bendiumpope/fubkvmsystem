@@ -48,28 +48,36 @@
             <table class="content-table tb-color">
                 <thead>
                     <tr>
+                    <#if user?? && (user.address =="admin")>
                         <th>UserName</th>
+                    </#if>
                         <th>SurName</th>
                         <th>FirstName</th>
                         <th>Office</th>
                         <th>Available Date</th>
                         <th>Available Time</th>
                         <th>Date</th>
+                    <#if user?? && (user.address =="admin" || user.address == "officer")>
                         <th>Edit</th>
                         <th>Delete</th>
+                    </#if>
                     </tr>
                 </thead>
                 <#if schedules?? && (schedules?size > 0)>
                 <tbody>
                     <#list schedules as schedule>
                     <tr>
+                    <#if user?? && (user.address =="admin" || user.address == "officer")>
                         <td>${schedule.userId}</td>
+                    </#if>
                         <td>${user.surName}</td>
                         <td>${user.firstName}</td>
                         <td>${schedule.office}</td>
                         <td>${schedule.date}</td>
                         <td>${schedule.timeduration}</td>
                         <td>${schedule.datebooked}</td>
+
+                        <#if user?? && (user.address =="admin" || user.address == "officer")>
                         <td>
                             <button onclick="document.getElementById('#${schedule.id}edit').style.display='block'" class="btn transparent">Edit</button>
                             <div id="#${schedule.id}edit" class="modal ">
@@ -112,6 +120,7 @@
                                 </form>
                             </div>
                         </td>
+                        </#if>
                     </tr>
                     </#list>
                 </tbody>

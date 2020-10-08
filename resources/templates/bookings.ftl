@@ -73,7 +73,9 @@
                 <tbody>
                 <#list booking as booking>
                     <tr>
+                    <#if user?? && (user.address =="admin" || user.address == "secretary")>
                         <td>${booking.userId}</td>
+                    </#if>
                         <td>${booking.whomtovisit}</td>
                         <td>${booking.visitreason}</td>
                         <td>${booking.visitingdate}</td>

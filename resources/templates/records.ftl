@@ -48,7 +48,9 @@
             <table class="content-table tb-color">
                 <thead>
                     <tr>
+                    <#if user?? && (user.address =="admin")>
                         <th>UserName</th>
+                    </#if>
                         <thName</th>
                         <th>Visit Date</th>
                         <th>Visit Time</th>
