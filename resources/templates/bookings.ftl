@@ -49,7 +49,9 @@
             <table class="content-table tb-color">
                 <thead>
                     <tr>
+                    <#if user?? && (user.address =="admin" || user.address == "secretary")>
                         <th>User</th>
+                    </#if>
                         <th>Whom To Visit</th>
                         <th>Reason</th>
                         <th>Date To Visit</th>
@@ -59,7 +61,9 @@
                         <#if user?? && (user.address =="admin" || user.address == "secretary")>
                         <th>Completed</th>
                         </#if>
+                        <#if user?? && (user.address =="admin" || user.address == "secretary")>
                         <th>Edit</th>
+                        </#if>
                         <#if user?? && (user.address =="admin" || user.address == "secretary")>
                         <th>Delete</th>
                         </#if>
@@ -99,6 +103,7 @@
                             </div>
                         </td>
                         </#if>
+                        <#if user?? && (user.address =="admin" || user.address == "secretary")>
                         <td>
                             <button onclick="document.getElementById('#${booking.id}edit').style.display='block'" class="btn transparent">Edit</button>
                             <div id="#${booking.id}edit" class="modal ">
@@ -120,6 +125,7 @@
                                 </form>
                             </div>
                         </td>
+                        </#if>
                         <#if user?? && (user.address =="admin" || user.address == "secretary")>
                         <td>
                             <button onclick="document.getElementById('#${booking.id}delete').style.display='block'" class="btn transparent">Delete</button>
