@@ -42,7 +42,7 @@ fun Route.signup(db: Repository, hashFunction: (String) -> String){
         val emailAddress = signUpParameters["emailAddress"] ?: return@post call.redirect(it)
         val phoneNumber = signUpParameters["phoneNumber"] ?: return@post call.redirect(it)
         val address = signUpParameters["address"] ?: return@post call.redirect(it)
-        val role = "admin"
+        val role = "visitor"
         val password = signUpParameters["password"] ?: return@post call.redirect(it)
         val confirmPassword = signUpParameters["confirmPassword"] ?: return@post call.redirect(it)
 
