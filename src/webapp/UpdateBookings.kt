@@ -41,10 +41,11 @@ fun Route.updatebookings(db: Repository, hashFunction: (String) -> String){
                 val id = params["id"] ?: throw java.lang.IllegalArgumentException("Missing parameter: id")
                 val whomtovisit = params["whomtovisit"] ?: throw IllegalArgumentException("Missing parameter: whom to visit")
                 val visitreason = params["reason"] ?: throw IllegalArgumentException("Missing parameter: visit reason")
-                val visitingdate = params["visitingdate"] ?: throw IllegalArgumentException("Missing parameter: visiting date")
-                val visittime = params["visittime"] ?: throw IllegalArgumentException("Missing parameter: Reason for visit time")
-                val bookingstatus = params["bookingstatus"] ?: throw IllegalArgumentException("Missing parameter: Reason for booking status")
+                var visitingdate = params["visitingdate"] ?: ""
+                var visittime = params["visittime"] ?: ""
+                var bookingstatus = params["bookingstatus"] ?: "Pending..."
                 val date = params["date"] ?: throw IllegalArgumentException("Missing parameter: date")
+
                 val user = call.sessions.get<EPSession>()?.let { db.user(it.userId) }
                 db.updatevisitbooking(id.toInt(), whomtovisit, visitreason, visitingdate, visittime, bookingstatus, date)
 

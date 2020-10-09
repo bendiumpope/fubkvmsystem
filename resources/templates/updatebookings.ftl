@@ -60,6 +60,7 @@
                         <i class="fas fa-book"></i>
                         <input type="text" name="reason" placeholder="Reason for visit" value="${booking.visitreason}" required>
                     </div>
+                    <#if user?? && (user.address =="admin" || user.address == "secretary")>
                     <div class="input-field2">
                         <i class="fas fa-calendar"></i>
                         <input type="date" name="visitingdate" placeholder="visiting date" value="${booking.visitingdate}" required>
@@ -74,7 +75,7 @@
                         <i class="fas fa-book"></i>
                         <input type="text" name="bookingstatus" placeholder="booking status" value="${booking.bookingstatus}" required>
                     </div>
-
+                    </#if>
                         <input type="hidden" name="date" placeholder="datebooked" value="${booking.date}" required>
 
 

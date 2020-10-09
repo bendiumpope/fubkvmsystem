@@ -61,12 +61,8 @@
                         <#if user?? && (user.address =="admin" || user.address == "secretary")>
                         <th>Completed</th>
                         </#if>
-                        <#if user?? && (user.address =="admin" || user.address == "secretary")>
                         <th>Edit</th>
-                        </#if>
-                        <#if user?? && (user.address =="admin" || user.address == "secretary")>
                         <th>Delete</th>
-                        </#if>
                     </tr>
                 </thead>
                 <#if booking?? && (booking?size > 0)>
@@ -105,7 +101,6 @@
                             </div>
                         </td>
                         </#if>
-                        <#if user?? && (user.address =="admin" || user.address == "secretary")>
                         <td>
                             <button onclick="document.getElementById('#${booking.id}edit').style.display='block'" class="btn transparent">Edit</button>
                             <div id="#${booking.id}edit" class="modal ">
@@ -127,8 +122,6 @@
                                 </form>
                             </div>
                         </td>
-                        </#if>
-                        <#if user?? && (user.address =="admin" || user.address == "secretary")>
                         <td>
                             <button onclick="document.getElementById('#${booking.id}delete').style.display='block'" class="btn transparent">Delete</button>
                             <div id="#${booking.id}delete" class="modal ">
@@ -150,7 +143,6 @@
                                 </form>
                             </div>
                         </td>
-                        </#if>
                     </tr>
                 </#list>
                 </tbody>
