@@ -42,7 +42,7 @@
         </div>
 
         <header>
-            <h1>SounDAW</h1>
+            <h1>VISITORS SYSTEM</h1>
         </header>
 
         <section class="section-follow">
