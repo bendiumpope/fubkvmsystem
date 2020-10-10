@@ -44,7 +44,8 @@
             +
         </div>
 
-        <div class="table-header" style="overflow-x:auto;">
+        <div class="table-header">
+        <div style="overflow-y:auto;">
             <table class="content-table tb-color">
                 <thead>
                     <tr>
@@ -126,6 +127,7 @@
                 </tbody>
                 </#if>
             </table>
+        </div>
         </div>
     </div>
     <script src="static/js/home.js"></script>

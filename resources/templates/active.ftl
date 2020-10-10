@@ -43,7 +43,8 @@
             +
         </div>
 
-        <div class="table-header" style="overflow-x:auto;">
+        <div class="table-header">
+        <div style="overflow-y:auto;">
             <table class="content-table tb-color">
                 <thead>
                     <tr>
@@ -60,6 +61,7 @@
                     </#list>
                 </tbody>
             </table>
+            </div>
         </div>
 
     </div>
