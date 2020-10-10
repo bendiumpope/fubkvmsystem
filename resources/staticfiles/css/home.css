@@ -244,8 +244,8 @@ footer{
         color: #474747;
         display: block;
         position: fixed;
-        right: 16px; top: 16px;
-        font-size: 64px;
+        right: 16px; top: 10px;
+        font-size: 58px;
         transition: .4s;
         font-family: 'Roboto Slab';
         cursor: pointer;
