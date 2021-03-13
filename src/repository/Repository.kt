@@ -6,7 +6,8 @@ import com.fubk_visitor_system.webapp.Schedules
 interface Repository {
     //VISITBOOKING
     suspend fun addvisitbooking(userId: String, whomtovisitValue: String, visitreasonValue: String,
-                                visitingdateValue: String, visittimeValue: String, bookingstatusValue: String, dateValue: String): VisitBooking?
+                                visitingdateValue: String, visittimeValue: String,
+                                bookingstatusValue: String, dateValue: String): VisitBooking?
     suspend fun visitbooking(id:Int): VisitBooking?
     suspend fun visitbooking(userId:String): List<VisitBooking>
     suspend fun visitbookings(): List<VisitBooking>

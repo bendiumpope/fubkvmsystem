@@ -136,7 +136,7 @@ class VisitRepository : Repository {
     }
 
     override suspend fun removeuser(userId: String): Boolean {
-        if (visitbooking(userId) == null) {
+        if (user(userId, null) == null) {
             throw IllegalArgumentException("No User found for id $userId.")
         }
         return dbQuery {
@@ -381,8 +381,8 @@ class VisitRepository : Repository {
             firstName = row[Users.firstName],
             emailAddress = row[Users.emailAddress],
             phoneNumber = row[Users.phoneNumber],
-            address = row[Users.role],
-            role = row[Users.address],
+            address = row[Users.address],
+            role = row[Users.role],
             passwordHash = row[Users.passwordHash]
         )
 

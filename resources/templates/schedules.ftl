@@ -49,9 +49,8 @@
             <table class="content-table tb-color">
                 <thead>
                     <tr>
-                    <#if user?? && (user.address =="admin")>
+
                         <th>UserName</th>
-                    </#if>
                         <th>SurName</th>
                         <th>FirstName</th>
                         <th>Office</th>
@@ -68,10 +67,7 @@
                 <tbody>
                     <#list schedules as schedule>
                     <tr>
-                    <#if user?? && (user.address =="admin" || user.address == "officer")>
                         <td>${schedule.userId}</td>
-                    </#if>
-                        <td>${user.surName}</td>
                         <td>${user.firstName}</td>
                         <td>${schedule.office}</td>
                         <td>${schedule.date}</td>
